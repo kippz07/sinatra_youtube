@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <section>
+      <h1>Welcome to jTube</h1>
+
+      <h2>There are currently <%= @count %> videos on this site</h2>
+
+      <% @videos.each do |video| %>
+        <a href="/videos/<%= video[:id] %>">
+          <h3> <%= video[:name] %></h3>
+        </a>
+        
+        <p> <%= video[:description] %></p>
+      <% end %>
+    </section>
+  </body>
+</html>

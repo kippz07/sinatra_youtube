@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit video</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <section>
+      <h1>Edit your video</h1>
+
+      <form action="/videos/<%= @video[:id] %>" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" value="<%= @video[:name] %>">
+        </div>
+
+        <div>
+          <label id="description" for="description">Description</label>
+          <textarea name="description"><%= @video[:description] %></textarea>
+        </div>
+
+        <div>
+          <label for="url">URL</label>
+          <input type="text" name="url" value="<%= @video[:url] %>">
+        </div>
+
+        <input id="submit" type="submit" value="Submit">
+      </form>
+    </section>
+  </body>
+</html>

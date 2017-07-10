@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @video[:name] %></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <section>
+      <h1><%= @video[:name] %></h1>
+      <!-- <a href="http://www.youtube.com/watch?v=<%= @video[:url] %>">Click here to watch</a> -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @video[:url] %>" frameborder="0" allowfullscreen></iframe>
+
+      <form action="/videos/<%= @video[:id] %>" method ="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input id="submit" type="submit" value="Delete">
+      </form>
+    </section>
+  </body>
+</html>
